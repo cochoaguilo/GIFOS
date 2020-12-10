@@ -1,0 +1,627 @@
+body{
+    color: #572EE5;
+    margin: 0 5%;
+    font-family:'Montserrat-Bold', sans-serif;
+    padding: 0;
+    background-color: white;
+}
+body[data-theme = 'dark']{
+    color: white;
+    background-color: #37383C;
+}
+
+/*.idiomas{
+    
+    width: 40%;
+}
+.idiomas a{
+    background: #333333;
+    color: #F3F5F8;
+    text-decoration: none;
+    padding: 0 10px;
+    font-weight: bold;
+}
+.idiomas a.active{
+    background: red;
+    
+}*/
+header{
+    
+    margin: 0 -5%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+header::before{
+    content: '';
+    width: 101%;
+    height: 7px;
+    background: #572EE5;
+    position: absolute;
+    left: -7px;
+    margin-top: -30px;
+    
+}   
+    
+
+nav{
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+nav .buttons-menu{
+    margin-left: 76%;
+    margin-top: 25px;
+}
+li{
+    list-style-type: none;
+}
+li a{
+    text-decoration: none;
+}
+
+.dark-mode{
+    
+    background-color: #37383C;
+    color: white;
+}
+.hidden{
+    display: none;
+}
+#menu[data-theme = "dark"]{
+    background-color: black;
+    opacity: 1;
+}
+.menu-active{
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+    margin-top: 50px;
+    margin-left: -5%;
+    z-index: 1;
+    background-color: #572EE5;
+    text-align: center;
+    color: white; 
+    font-size: 22px; 
+    opacity: 0.9;  
+}
+.menu-active li{
+    margin: 30px;
+    padding: 10px; 
+    margin-left: -10px;
+}
+.menu-active li a{
+    color: white;
+   
+}
+
+.menu-active li::after{
+    content: '';
+    position: absolute;
+    background: white;
+    width: 40px;
+    height: 2px;
+    left: 45%;
+    margin-top: 35px;
+}
+#crear-gifo{
+    display: none;
+}
+
+/*bloque1*/
+.bloque1{
+    position: relative;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bloque1 .head-mis-gifos{
+    position: relative;
+    margin-top: 10%;
+    align-self: center;
+}
+h1{
+    position: relative;
+    left: 10px;
+}
+.bloque1 #icon-mis-gifos{
+    position: relative;
+    left: 50%;
+    align-self: center;
+}
+.bloque1 #icon-sin-contenido{
+    position: relative;
+    left: 35%;
+    width: 40%;
+    align-self: center;
+}
+#mis-gifos-sin-contenido {
+    margin-top: 50px;
+}
+#mis-gifos-sin-contenido h2{
+    position: relative;
+    left: 17%;
+    font-size: 22px;
+    width: 70%;
+    text-align: center;
+    color: #50E3C2;
+}
+#container-mis-gifos{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.gifs-mis-gifos{
+    position: relative;
+    width: 43%;
+    height: 100px;
+    margin: 10px;
+}
+.gifs-mis-gifos img{
+    position: absolute;
+    width: 100%;
+    height: inherit;
+}
+.gifs-mis-gifos .bloque-activo{
+    display: none;
+}
+.button-gifs{
+    height: 50px;
+    width: 100px;
+    border-radius: 25px;
+    color: #572EE5;
+    border: 2px solid #572EE5;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: white;
+    position: relative;
+    
+    top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+/*bloque2*/
+
+.bloque2{
+    height: 430px;
+    background-color: #F3F5F8;
+    color: black;
+    margin: 0 -5%;
+}
+.bloque2[data-theme = 'dark']{
+    background-color: #222326;
+    color: white;
+}
+.bloque2 .texto{
+    position: relative;
+    z-index: 0;
+    margin-right: 20%;
+    margin-left: 20%; 
+    top: 60px;
+    
+}
+.bloque2 p{
+    position: relative;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 23px;
+}
+
+    
+
+h3{
+    text-align: center;
+    color: #572EE5;
+}
+.bloque2 .container-gifs{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 50px;
+    overflow-x: scroll;
+}
+.container-gifs::-webkit-scrollbar{
+    display: none;
+}
+.bloque2 .container-gifs .trending-gifs{
+    flex-shrink: 0;
+    overflow: hidden;
+    scroll-snap-align: start; 
+    margin: 20px;
+}
+.trending-gifs .estilo-imagenes{
+   
+    height: 200px;
+    width: 250px;
+   
+}
+.trending-gifs .bloque-activo{
+    display: none;
+}
+
+
+.trending-gifs .estilo-imagenes{
+    height: 200px;
+    width: 250px;
+}
+/* Este modal conecta con API.js y funciona tanto
+ para los gifs del trending como para los gifs del.gifs-favoritos*/
+/*fondo negro para el modal*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0, 0.8);
+}
+.modal-content{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    height: 70%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animatetop;
+    animation-duration: 0.5s;
+}
+/*Add animation
+baja el modal desde arriba*/
+@-webkit-keyframes animatetop{
+    from {top: -300px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+@keyframes animatetop{
+    from {top: -300px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+#close-modal{
+    position: relative;
+    float: right;
+    width: 20px;
+    
+}
+#close-modal:hover, #close-modal:focus{
+    cursor: pointer;
+}
+.modal-body{
+    padding: 4px;
+}
+#imagen-modal{
+    position: relative;
+    width: 83%;
+    top: 60px;
+    left: 8.5%;
+    height: 200px;
+}
+.modal-footer{
+    position: relative;
+    top: 60px;
+    padding: 4px;
+}
+.texto-modal{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    left: 8%;
+    text-align: left;
+}
+.modal-parrafo{
+    margin: 0;
+    padding: 2px;
+    text-align: left;
+}
+.iconos-modal{
+    position: relative;
+    display: flex;
+    width: 40px;
+    left: 50%;
+    bottom: 5px;
+}
+/* Fin del modal*/
+/*footer*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    color: black;
+    height: 220px;
+}
+footer[data-theme = "dark"]{
+    color: white;
+}
+footer p{
+    margin: 50px;
+}
+footer a{
+    text-decoration: none;
+}
+footer #copyright{
+    margin-bottom: 0%;
+    width: 100%;
+    text-align: center;
+}
+.logos{
+    margin-top: -10px;
+    letter-spacing: 20px;
+}
+#fondo{
+    content: '';
+    width: 100%;
+    height: 7px;
+    background: #572EE5;
+    position: absolute;
+    margin-left: -5%;
+    
+    
+}
+/* version desktop*/
+@media (min-width: 700px){
+
+    nav{
+        display: grid;
+        grid-template-columns: 1fr 4fr 3fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .buttons-menu{
+        display: none;
+    }
+   
+    nav img{
+        grid-column: 1/2;
+    }
+    nav #menu{
+        grid-column: 3/4;
+        
+    }
+    nav .hidden{
+        display: flex;
+    }
+    nav #menu ul{
+        display: flex;
+        flex-direction: row;
+    }
+    #menu a:hover{
+        text-decoration: underline solid #50E3C2;
+        
+    }
+    #menu a:active{
+        color: #9CAFC3;
+    }
+    #menu[data-theme = "dark"]{
+        background-color:#37383C ;
+
+    }
+    ul li a{
+        margin: 10px;
+        font-variant-caps: all-small-caps;
+        font-size: 20px;
+        font-weight: bold;
+        color: #572EE5;
+    }
+    a[data-theme = "dark"]{
+        color: white;
+    }
+    #crear-gifo{
+        grid-column: 4/5;
+        display: inline;
+        
+    }
+   /*bloque 1 */
+    .bloque1{
+        margin-top: 5%;
+    }
+    .bloque1 h1{
+        font-size: 32px;
+
+    }
+    .bloque1 img{
+        width: 40%;
+        left: 20%;
+    }
+    .bloque1 .head-mis-gifos{
+        margin-top: 2%;
+        right: 0.5%;
+    }
+    h1{
+        left: 32px;
+    }
+    #mis-gifos-sin-contenido h2{
+        margin-top: 100px;
+        font-size: 28px;
+        width: 100%;
+        left: 3%;
+        margin-bottom: 50px;
+    }
+    #container-mis-gifos{
+        left: 5.5%;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .gifs-mis-gifos{
+        
+        width: 250px;
+        height: 200px;
+        margin: 15px;
+        transition: .4s ease;
+    }
+    .gifs-mis-gifos .bloque-activo{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #572EE5;
+        z-index: 1;
+        opacity: 0;
+        transition: .4s ease;
+    }
+    .gifs-mis-gifos .bloque-activo .iconos-tarjeta{
+        position: relative;
+        top: 25px;
+        left: 1%;
+        width: 100px;
+        height: 50px;
+        margin: 2px;
+    }
+    .gifs-mis-gifos:hover .bloque-activo{
+        opacity: 0.8;
+    }
+    .gifs-mis-gifos:hover{
+        opacity: 0.8;
+    }
+    .button-gifs{
+        height: 60px;
+        width: 140px;
+        border-width: 4px;
+        padding: 16px;
+        font-size: 18px;
+        
+        top: 40px;
+        cursor: pointer;
+    }
+    .button-gifs:hover{
+        background-color: #572EE5;
+        color: white;
+    }
+    /*bloque 2*/
+    .bloque2{
+        height: 550px;
+    }
+    .bloque2 .hidden{
+        display: flex;
+    }
+    #slider-left{
+        position: relative;
+        left: 10%;
+        top: 32%;
+        cursor: pointer;
+    }
+    #slider-right{
+        position: relative;
+        left: 89%;
+        bottom: 20%;
+        cursor: pointer;
+    }
+    .bloque2 #container-gifs{
+        width: 70%;
+        left: 15%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    
+    .bloque2 #container-gifs .hidden{
+        display: none;
+    }
+    
+    .trending-gifs{
+        position: relative;
+        
+        transition: .2s ease;
+        
+    }
+    .trending-gifs .bloque-activo{
+        display: block;
+        bottom: 5px;
+        position: absolute;
+        width: 250px;
+        height: 200px;
+        background-color: #572EE5;
+        z-index: 1;
+        opacity: 0;
+        transition: .2s ease;
+    }
+    .trending-gifs:hover .bloque-activo{
+        opacity: 0.8;
+    }
+    .iconos-tarjeta{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        float: right;
+        top: 10px;
+        right: 100px;
+        bottom: 65px;
+        width: 5px;
+        gap: 2px;
+        cursor: pointer;
+    }
+    .iconos-tarjeta .iconos-estilo{
+        position: relative;
+        width: 30px;
+        height: 30px;
+    }
+    .iconos-tarjeta .iconos-estilo img{
+        width: inherit;
+        height: inherit;
+    }
+    .trending-gifs .a{
+        height: 20px;
+    }
+    .trending-gifs:hover{
+        opacity: 0.8;
+    }
+     /* Modal version desktop*/
+     #imagen-modal{
+        width: 60%;
+        height: 450px;
+        left: 20%;
+    }
+    .modal-content{
+        height: 80%;
+    }
+    .texto-modal{
+        left: 16%;
+        font-size: 24px;
+    }
+    .iconos-modal{
+        width: 100px;
+        left: 68%;
+        
+    }
+    .iconos-modal img{
+        width: 160px;
+        cursor: pointer;
+    }
+    .modal-footer{
+        margin: 0px 80px;
+    }
+    /*footer*/
+    footer{
+        flex-direction: row;
+        
+        margin-left: 5%;
+    }
+    footer .logos{
+        display: flex;
+        flex-direction: row;
+       
+        
+    }
+    footer .logos img{
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        padding: 10px;
+    }
+    #copyright{
+        margin-left: 40%;
+    }
+}
