@@ -88,10 +88,8 @@ function addToDOM(info, container, clase, name,downsized) {
     iconFav.src = "../GIFOS/Imagenes/icon-fav-active.svg";
     console.log(info)
     saveGifLocalStorage(info);
-    if ((clase ==='gifs-search' ||
-    clase === 'trending-gifs' )) {
-      console.log('jo')
-      //window.location.reload();
+    if (clase !=='gifs-search') {
+      window.location.reload();
     }
     
     
@@ -183,9 +181,7 @@ function addToDOM(info, container, clase, name,downsized) {
     modalFav.src = "../GIFOS/Imagenes/icon-fav-active.svg";
     console.log(img.src)
     saveGifLocalStorage(info);
-    if (!(clase ==='gifs-search' ||
-    clase === 'trending-gifs' )) {
-      console.log('jo')
+    if (clase !=='gifs-search') {
       window.location.reload();
     }
     

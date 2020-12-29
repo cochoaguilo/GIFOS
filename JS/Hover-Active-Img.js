@@ -92,12 +92,12 @@ sliderLeft.addEventListener("mouseout", () => {
 const sliderRight = document.getElementById("slider-right");
 
 sliderRight.addEventListener("mouseover", () => {
-  sliderRight.src = "Imagenes/button-slider-right-hover.svg";
+  sliderRight.src = "Imagenes/Button-Slider-right-hover.svg";
 });
 sliderRight.addEventListener("mouseout", () => {
   let sliderrightDark = sliderRight.getAttribute("data-theme");
   if (sliderrightDark == "light") {
-    sliderRight.src = "Imagenes/button-slider-right.svg";
+    sliderRight.src = "Imagenes/Button-Slider-right.svg";
   }
   if (sliderrightDark == "dark") {
     sliderRight.src = "Imagenes/button-slider-right-md-noct.svg";
@@ -145,85 +145,3 @@ function saveGifLocalStorage(gifId){
   
 
 }
-//icono busqueda
-
-
-
-/*iconSearch.addEventListener("click", () => {
-  let rutaActual = iconSearch.getAttribute("src");
-  if (rutaActual == "../Imagenes/icon-search.svg") {
-    iconSearch.setAttribute("src", "../Imagenes/close.svg");
-    iconSearch.style.width = "16px";
-    iconSearch.style.height = "16px";
-    
-    Busqueda();
-  } else {
-    iconSearch.setAttribute("src", "../Imagenes/icon-search.svg");
-    iconSearch.style.height = "20px";
-    iconSearch.style.width = "20px";
-    
-    closeAllLists();
-  }
-});*/
-/** 
-const modalFav = document.getElementById('modal-fav');
-const modalDownload = document.getElementById('modal-download');
-
-modalFav.addEventListener('mouseover', ()=>{
-  modalFav.src = '../Imagenes/icon-fav-hover.svg'
-})
-
-modalFav.addEventListener("mouseout", () => {
-  modalFav.src = "../Imagenes/icon-fav.svg";
-});
-
-
-
-modalDownload.addEventListener("mouseover", () => {
-  modalDownload.src = "../Imagenes/icon-download-hover.svg";
-});
-
-modalDownload.addEventListener("mouseout", () => {
-  modalDownload.src = "../Imagenes/icon-download.svg";
-});
-
-*/
-/*
-let modalCreate = (imagen, container) =>{
-  let modal = document.createElement('div');
-  modal.classList.add('modal')
-  let modalContent = document.createElement('div');
-  modal.appendChild(modalContent);
-  modalContent.classList.add('modal-content')
-  let modalBody = document.createElement('div');
-  modalContent.appendChild(modalBody);
-  modalBody.classList.add('moda;-body')
-  let IconosModal = document.createElement('div');
-  modalContent.appendChild(IconosModal);
-  IconosModal.classList.add('iconos-modal')
-  let modalFav = document.createElement('img');
-  modalFav.src = 'Imagenes/icon-fav.svg'
-  let modalDownload = document.createElement('img');
-  modalDownload.src = 'Imagenes/icon-download.svg'
-  IconosModal.appendChild(modalFav);
-  IconosModal.appendChild(modalDownload);
-  let imagenModal = document.createElement('img');
-  modalBody.appendChild(imagenModal);
-  imagenModal.setAttribute('src', imagen.url)
-  imagenModal.id = '#imagen-modal';
-  //evento que llama al modal
-  imagen.onclick = function () {
-    modal.style.display = "block";
-    imagenModal.src = this.src;
-  };
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-  container.appendChild(modal);
-  //close modal
-  //function closeModal() {
-    //modal.style.display = "none";
-  //}
-}*/
