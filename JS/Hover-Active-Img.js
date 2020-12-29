@@ -1,21 +1,22 @@
 //Menu hamburgesa
 const iconoMenu = document.getElementById("icono-menu");
-
+const menuClose = document.getElementById("menu-close")
 
 iconoMenu.addEventListener("click", modify);
+menuClose.addEventListener("click",modify)
 //Modifica menu y boton  
 function modify(){
   
-  var rutaActual = menuBtn.getAttribute("src");
-
-  if (rutaActual == "../Imagenes/burger.svg") {
-    menuBtn.setAttribute("src", "../Imagenes/close.svg");
+  rutaActual = menu.getAttribute('class');
+  if (rutaActual == "hidden"){
     menu.classList.replace('hidden','menu-active');
-    
-  } else {
-    menuBtn.setAttribute("src", "../Imagenes/burger.svg");
+  }else {
+   
     menu.classList.replace('menu-active','hidden');
   }
+  iconoMenu.classList.toggle("hidden")
+  menuClose.classList.toggle('hidden')
+  
   
 }
 
@@ -24,15 +25,15 @@ function modify(){
 const crear_gifo = document.querySelector("#crear-gifo");
 
 crear_gifo.addEventListener("mouseover", () => {
-  crear_gifo.src = "../Imagenes/CTA-crear-gifo-hover.svg";
+  crear_gifo.src = "Imagenes/CTA-crear-gifo-hover.svg";
 });
 
 crear_gifo.addEventListener("mouseout", () => {
-  crear_gifo.src = "../Imagenes/button-crear-gifo.svg";
+  crear_gifo.src = "Imagenes/button-crear-gifo.svg";
 });
 
 crear_gifo.addEventListener("click", () => {
-  crear_gifo.src = "../Imagenes/CTA-crear-gifo-active.svg";
+  crear_gifo.src = "Imagenes/CTA-crear-gifo-active.svg";
 });
 
 //Iconos redes sociales
@@ -42,27 +43,27 @@ const facebook = document.querySelector("#facebook");
 const instagram = document.querySelector("#instagram");
 
 twitter.addEventListener("mouseover", () => {
-  twitter.src = "../Imagenes/icon-twitter-hover.svg";
+  twitter.src = "Imagenes/icon-twitter-hover.svg";
 });
 
 twitter.addEventListener("mouseout", () => {
-  twitter.src = "../Imagenes/icon-tw-normal.svg";
+  twitter.src = "Imagenes/icon-tw-normal.svg";
 });
 
 facebook.addEventListener("mouseover", () => {
-  facebook.src = "../Imagenes/icon_facebook_hover.svg";
+  facebook.src = "Imagenes/icon_facebook_hover.svg";
 });
 
 facebook.addEventListener("mouseout", () => {
-  facebook.src = "../Imagenes/icon_facebook.svg";
+  facebook.src = "Imagenes/icon_facebook.svg";
 });
 
 instagram.addEventListener("mouseover", () => {
-  instagram.src = "../Imagenes/icon_instagram-hover.svg";
+  instagram.src = "Imagenes/icon_instagram-hover.svg";
 });
 
 instagram.addEventListener("mouseout", () => {
-  instagram.src = "../Imagenes/icon_instagram.svg";
+  instagram.src = "Imagenes/icon_instagram.svg";
 });
 
 
@@ -76,30 +77,30 @@ instagram.addEventListener("mouseout", () => {
 const sliderLeft = document.getElementById("slider-left");
 
 sliderLeft.addEventListener("mouseover", () => {
-  sliderLeft.src = "../Imagenes/button-slider-left-hover.svg";
+  sliderLeft.src = "Imagenes/button-slider-left-hover.svg";
 });
 sliderLeft.addEventListener("mouseout", () => {
   let sliderleftDark = sliderLeft.getAttribute("data-theme");
   if (sliderleftDark == "light") {
-    sliderLeft.src = "../Imagenes/button-slider-left.svg";
+    sliderLeft.src = "Imagenes/button-slider-left.svg";
   }
   if (sliderleftDark == "dark") {
-    sliderLeft.src = "../Imagenes/button-slider-left-md-noct.svg";
+    sliderLeft.src = "Imagenes/button-slider-left-md-noct.svg";
   }
 });
 
 const sliderRight = document.getElementById("slider-right");
 
 sliderRight.addEventListener("mouseover", () => {
-  sliderRight.src = "../Imagenes/button-slider-right-hover.svg";
+  sliderRight.src = "Imagenes/button-slider-right-hover.svg";
 });
 sliderRight.addEventListener("mouseout", () => {
   let sliderrightDark = sliderRight.getAttribute("data-theme");
   if (sliderrightDark == "light") {
-    sliderRight.src = "../Imagenes/button-slider-right.svg";
+    sliderRight.src = "Imagenes/button-slider-right.svg";
   }
   if (sliderrightDark == "dark") {
-    sliderRight.src = "../Imagenes/button-slider-right-md-noct.svg";
+    sliderRight.src = "Imagenes/button-slider-right-md-noct.svg";
   }
 });
 
@@ -146,7 +147,7 @@ function saveGifLocalStorage(gifId){
 }
 //icono busqueda
 
-const iconSearch = document.getElementById("icon-search");
+
 
 /*iconSearch.addEventListener("click", () => {
   let rutaActual = iconSearch.getAttribute("src");
@@ -187,3 +188,42 @@ modalDownload.addEventListener("mouseout", () => {
 });
 
 */
+/*
+let modalCreate = (imagen, container) =>{
+  let modal = document.createElement('div');
+  modal.classList.add('modal')
+  let modalContent = document.createElement('div');
+  modal.appendChild(modalContent);
+  modalContent.classList.add('modal-content')
+  let modalBody = document.createElement('div');
+  modalContent.appendChild(modalBody);
+  modalBody.classList.add('moda;-body')
+  let IconosModal = document.createElement('div');
+  modalContent.appendChild(IconosModal);
+  IconosModal.classList.add('iconos-modal')
+  let modalFav = document.createElement('img');
+  modalFav.src = 'Imagenes/icon-fav.svg'
+  let modalDownload = document.createElement('img');
+  modalDownload.src = 'Imagenes/icon-download.svg'
+  IconosModal.appendChild(modalFav);
+  IconosModal.appendChild(modalDownload);
+  let imagenModal = document.createElement('img');
+  modalBody.appendChild(imagenModal);
+  imagenModal.setAttribute('src', imagen.url)
+  imagenModal.id = '#imagen-modal';
+  //evento que llama al modal
+  imagen.onclick = function () {
+    modal.style.display = "block";
+    imagenModal.src = this.src;
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+  container.appendChild(modal);
+  //close modal
+  //function closeModal() {
+    //modal.style.display = "none";
+  //}
+}*/

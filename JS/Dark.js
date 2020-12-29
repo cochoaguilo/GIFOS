@@ -48,12 +48,12 @@ function logoDark() {
   let logoDark = logo.getAttribute("data-theme");
   if (logoDark == "light") {
     logo.getAttribute("src");
-    logo.setAttribute("src", "../Imagenes/logo-mobile-modo-noct.svg");
+    logo.setAttribute("src", "../GIFOS/Imagenes/logo-mobile-modo-noct.svg");
     logo.setAttribute("data-theme", "dark");
   }
   if (logoDark == "dark") {
     logo.setAttribute("data-theme", "light");
-    logo.setAttribute("src", "../Imagenes/logo-mobile.svg");
+    logo.setAttribute("src", "../GIFOS/Imagenes/logo-mobile.svg");
   }
 }
 
@@ -73,13 +73,13 @@ function sliderleftDark() {
     sliderLeft.getAttribute("src");
     sliderLeft.setAttribute(
       "src",
-      "../Imagenes/button-slider-left-md-noct.svg"
+      "../GIFOS/Imagenes/button-slider-left-md-noct.svg"
     );
     sliderLeft.setAttribute("data-theme", "dark");
   }
   if (sliderleftDark == "dark") {
     sliderLeft.setAttribute("data-theme", "light");
-    sliderLeft.setAttribute("src", "../Imagenes/button-slider-left.svg");
+    sliderLeft.setAttribute("src", "../GIFOS/Imagenes/button-slider-left.svg");
   }
 }
 function sliderrightDark() {
@@ -88,13 +88,13 @@ function sliderrightDark() {
     sliderRight.getAttribute("src");
     sliderRight.setAttribute(
       "src",
-      "../Imagenes/button-slider-right-md-noct.svg"
+      "../GIFOS/Imagenes/button-slider-right-md-noct.svg"
     );
     sliderRight.setAttribute("data-theme", "dark");
   }
   if (sliderrightDark == "dark") {
     sliderRight.setAttribute("data-theme", "light");
-    sliderRight.setAttribute("src", "../Imagenes/button-Slider-right.svg");
+    sliderRight.setAttribute("src", "../GIFOS/Imagenes/button-Slider-right.svg");
   }
 }
 const footer = document.getElementsByTagName("footer");
@@ -107,22 +107,38 @@ function footerDark() {
   }
 }
 
-let menuBtn = document.querySelector("#icono-menu");
+
 function burgerDark() {
-  let burgerDark = menuBtn.getAttribute("data-theme");
-  if (burgerDark == "light" || rutaActual == "../Imagenes/close.svg") {
-    menuBtn.setAttribute("src", "../Imagenes/close-modo-noct.svg");
-    /*menuBtn.removeAttribute('data-theme');*/
+  let burgerDark = iconoMenu.getAttribute("data-theme");
+  if (burgerDark == "light") {
+    iconoMenu.setAttribute("src", "../GIFOS/Imagenes/burger-modo-noct.svg");
+    iconoMenu.setAttribute('data-theme', "dark");
   }
-  /*if(!(menuBtn.hasAttribute('data-theme'))){
-    menuBtn.setAttribute('src', 'Imagenes/burger.svg');
-  }*/
+    
+  if(burgerDark == "dark"){
+    iconoMenu.setAttribute('src', '../GIFOS/Imagenes/burger.svg');
+    iconoMenu.setAttribute('data-theme', "light");
+  }
+}
+
+function closeDark() {
+  let burgerDark = menuClose.getAttribute("data-theme");
+  if (burgerDark == "light") {
+    menuClose.setAttribute("src", "../GIFOS/Imagenes/close-modo-noct.svg");
+    menuClose.setAttribute('data-theme', "dark");
+  }
+    
+  if(burgerDark == "dark"){
+    menuClose.setAttribute('src', '../GIFOS/Imagenes/close.svg');
+    menuClose.setAttribute('data-theme', "light");
+  }
 }
 
 function darkMode() {
   bodyDark();
   logoDark();
   burgerDark();
+  closeDark();
   bloque2Dark();
   footerDark();
   menuDark();

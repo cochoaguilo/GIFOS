@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Styles/crear-gifo.css" />
+    <link rel="stylesheet" href="Styles/crear-gifo.css" />
     <!--Google Fonts-->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"
@@ -24,7 +24,7 @@
     <nav>
       <a href="index.html"
         ><img
-          src="../Imagenes/logo-mobile.svg"
+          src="Imagenes/logo-mobile.svg"
           alt="logo-mobile"
           data-theme="light"
           id="logo-mobile"
@@ -53,8 +53,9 @@
 
       <div class="" id="menu" data-theme="light">
         <ul>
-          <li>
+          <li><noscript>
             <a href="#" id="modonocturno" data-theme="light">Modo Nocturno</a>
+          </noscript>
           </li>
           <li><a href="favoritos.html" data-theme="light">Favoritos</a></li>
           <li><a href="misGifos.html" data-theme="light">Mis GIFOS</a></li>
@@ -62,7 +63,7 @@
       </div>
       <a href="CrearGifo.html"
         ><img
-          src="../Imagenes/CTA-crear-gifo-active.svg"
+          src="Imagenes/CTA-crear-gifo-active.svg"
           alt=""
           id="crear-gifo"
           data-theme="light"
@@ -70,8 +71,8 @@
     </nav>
     <main>
       <div id="camara-luz">
-        <img src="../Imagenes/camara.svg" alt="camara" id="camara" />
-        <img src="../Imagenes/element-luz-camara.svg" alt="luz" id="luz" />
+        <img src="Imagenes/camara.svg" alt="camara" id="camara" />
+        <img src="Imagenes/element-luz-camara.svg" alt="luz" id="luz" />
       </div>
 
       <div class="caja-camara">
@@ -94,27 +95,28 @@
         <button id="grabar" class="hidden">GRABAR</button>
         <button id="finalizar" class="hidden">FINALIZAR</button>
         <button id="subir_gifo" class="hidden">SUBIR GIFO</button>
+        <button id="reiniciar" class="hidden">REINICIAR</button>
 
-      <img src="../Imagenes/pelicula.svg" alt="pelicula" id="pelicula" />
+      <img src="Imagenes/pelicula.svg" alt="pelicula" id="pelicula" />
     </main>
     <footer data-theme="light">
       <p>Compartí en:</p>
       <div class="logos">
         <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-          <img src="../Imagenes/icon-tw-normal.svg" alt="twitter" id="twitter" data-theme="light"/>
+          <img src="Imagenes/icon-tw-normal.svg" alt="twitter" id="twitter" data-theme="light"/>
         </a>
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-          <img src="../Imagenes/icon_facebook.svg" alt="facebook" id="facebook" data-theme="light"/>
+          <img src="Imagenes/icon_facebook.svg" alt="facebook" id="facebook" data-theme="light"/>
         </a>
         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-          <img src="../Imagenes/icon_instagram.svg" alt="instagram" id="instagram" data-theme="light"/>
+          <img src="Imagenes/icon_instagram.svg" alt="instagram" id="instagram" data-theme="light"/>
         </a>
       </div>
       <p id="copyright">© GIFOS 2020 All rights reserved</p>
     </footer>
     <div id="fondo"></div>
-    <script src="../JS/Dark.js"></script>
-    <script src="../JS/Hover-Active-Img.js"></script>
-    <script src="../JS/Video.js"></script>
+    <script src="JS/Dark.js"></script>
+    <script src="JS/Hover-Active-Img.js"></script>
+    <script src="JS/Video.js"></script>
   </body>
 </html>

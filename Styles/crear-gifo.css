@@ -203,11 +203,39 @@ button{
     background-color: #572EE5;
     color: white;
 }
+#reiniciar:hover{
+    background-color: #572EE5;
+    color: white;
+}
 .hidden{
     display: none;
 }
-
-
+.bloque-activo{
+    display: block;
+    top: 23.5%;
+    position: absolute;
+    width: 580px;
+    height: 242px;
+    background-color: #572EE5;
+    z-index: 10;
+    opacity: 0.8;
+    transition: .1s ease;
+    justify-content: flex-end;
+    
+}
+.bloque-activo .tarjeta-video{
+    top: 80px;
+    left: 0;
+    position: relative;
+    justify-items: center;
+    align-self: center;
+    color: white;
+}
+#tick{
+    position: relative;
+    left: 50%;
+    margin: 10px;
+}
 /*footer*/
 footer{
     display: flex;

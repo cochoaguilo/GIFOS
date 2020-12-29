@@ -157,9 +157,9 @@ li a{
     margin: 10px;
 }
 .gifs-favoritos img{
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: inherit;
+    height: 100%;
 }
 .gifs-favoritos .bloque-activo{
     display: none;
@@ -247,7 +247,7 @@ h3{
 .modal{
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     padding-top: 60px;
     left: 0;
     top: 0;
@@ -319,9 +319,13 @@ baja el modal desde arriba*/
 .iconos-modal{
     position: relative;
     display: flex;
-    width: 40px;
-    left: 50%;
-    bottom: 5px;
+    width: 80px;
+    left: 65%;
+    top: 70px;
+}
+.iconos-modal a{
+    position: relative;
+    width: 100%;
 }
 /* Fin del modal*/
 
@@ -452,6 +456,7 @@ footer #copyright{
         position: absolute;
         width: 100%;
         height: 100%;
+        bottom: 0px;
         background-color: #572EE5;
         z-index: 1;
         opacity: 0;
@@ -466,9 +471,6 @@ footer #copyright{
         margin: 2px;
     }
     .gifs-favoritos:hover .bloque-activo{
-        opacity: 0.8;
-    }
-    .gifs-favoritos:hover{
         opacity: 0.8;
     }
     .button-gifs{
@@ -506,8 +508,8 @@ footer #copyright{
     }
     #slider-right{
         position: relative;
-        left: 87%;
-        bottom: 18.5%;
+        left: 89%;
+        bottom: 20%;
         cursor: pointer;
     }
     .bloque2 #container-gifs{
@@ -566,10 +568,9 @@ footer #copyright{
     .trending-gifs .a{
         height: 20px;
     }
-    .trending-gifs:hover{
-        opacity: 0.8;
-    }
+    
     /* Modal version desktop*/
+    
     #imagen-modal{
         width: 60%;
         height: 450px;
@@ -583,12 +584,20 @@ footer #copyright{
         font-size: 24px;
     }
     .iconos-modal{
-        width: 100px;
+        position: relative;
+        width: 140px;
+        height: 60px;
         left: 68%;
         
     }
     .iconos-modal img{
-        width: 160px;
+        position: relative;
+        width: 50%;
+        cursor: pointer;
+    }
+    .iconos-modal a{
+        position: relative;
+        width: 100%;
         cursor: pointer;
     }
     .modal-footer{

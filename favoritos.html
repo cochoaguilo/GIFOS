@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/favoritos-style.css">
+    <link rel="stylesheet" href="../GIFOS/Styles/favoritos-style.css">
      <!--Google Fonts-->
      <link
      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"
@@ -19,29 +19,29 @@
 <body data-theme="light">
     <header></header>
     <nav>
-      <a href="../HTML/index.html"><img src="../Imagenes/logo-mobile.svg" alt="logo-mobile" data-theme="light" id="logo-mobile"/></a>
+      <a href="index.html"><img src="Imagenes/logo-mobile.svg" alt="logo-mobile" data-theme="light" id="logo-mobile"/></a>
 
       <div class="buttons-menu">
-        <img src="../Imagenes/burger.svg" id="icono-menu" data-theme="light" alt="icono-menu"/>
-        <img src="../Imagenes/close.svg" id="menu-close" class="hidden" data-theme="light" alt="menu-close"/>
+        <img src="Imagenes/burger.svg" id="icono-menu" data-theme="light" alt="icono-menu"/>
+        <img src="Imagenes/close.svg" id="menu-close" class="hidden" data-theme="light" alt="menu-close"/>
       </div>
       <div class="hidden" id="menu" data-theme="light">
         <ul>
-          <li><a href="#" id="modonocturno" data-theme="light">Modo Nocturno</a></li>
-          <li><a href="index.html" data-theme="light">Home</a></li>
-          <li><a href="misGifos.html" data-theme="light">Mis GIFOS</a></li>
+          <li><a href="#" id="modonocturno" data-theme="light" class="li-menu">Modo Nocturno</a></li>
+          <li><a href="index.html" data-theme="light" class="li-menu">Home</a></li>
+          <li><a href="misGifos.html" data-theme="light" class="li-menu">Mis GIFOS</a></li>
         </ul>
       </div>
-      <a href="../HTML/CrearGifo.html"><img src="../Imagenes/button-crear-gifo.svg" alt="" id="crear-gifo" data-theme="light"/></a>
+      <a href="CrearGifo.html"><img src="Imagenes/button-crear-gifo.svg" alt="" id="crear-gifo" data-theme="light"/></a>
     </nav>
     <main>
         <section id="bloque1">
             <div>
-                <img src="../Imagenes/icon-favoritos.svg" alt="icon-favoritos" id="icon-favoritos">
+                <img src="Imagenes/icon-favoritos.svg" alt="icon-favoritos" id="icon-favoritos">
                 <h1>Favoritos</h1>
             </div>
             <div id="fav-sin-contenido">
-                <img src="../Imagenes/icon-fav-sin-contenido.svg" alt="icon-fav-sin-contenido" id="icon-fav-sin-contenido">
+                <img src="Imagenes/icon-fav-sin-contenido.svg" alt="icon-fav-sin-contenido" id="icon-fav-sin-contenido">
                 <h2>"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</h2>
             </div>
             <div id="container-favoritos"></div>
@@ -53,20 +53,20 @@
               <p>Mira los últimos GIFOS de nuestra comunidad</p>
             </div>
             <img
-              src="../Imagenes/button-slider-left.svg"
+              src="Imagenes/button-slider-left.svg"
               id="slider-left"
               class="hidden"
               data-theme="light"
               alt="slider-left"
             />
             <div id="container-gifs">
-              
+              <!--
             </div>
             <div class="modal" id="myModal">
               <div class="modal-content">
                 <div class="modal-body">
                   <img
-                    src="../Imagenes/close.svg"
+                    src="Imagenes/close.svg"
                     alt="close-modal"
                     id="close-modal"
                     onclick="closeModal()"
@@ -81,7 +81,7 @@
                   </div>
                   <div class="iconos-modal">
                     <img
-                      src="../Imagenes/icon-fav.svg"
+                      src="Imagenes/icon-fav.svg"
                       alt="fav"
                       id="modal-fav"
                     />
@@ -92,10 +92,10 @@
                     />
                   </div>
                 </div>
-              </div>
+              </div>-->
             </div>
             <img
-              src="../Imagenes/button-slider-right.svg"
+              src="Imagenes/button-slider-right.svg"
               id="slider-right"
               class="hidden"
               data-theme="light"
@@ -107,23 +107,23 @@
           <p>Compartí en:</p>
           <div class="logos">
             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-              <img src="../Imagenes/icon-tw-normal.svg" alt="twitter" id="twitter" data-theme="light"/>
+              <img src="Imagenes/icon-tw-normal.svg" alt="twitter" id="twitter" data-theme="light"/>
             </a>
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <img src="../Imagenes/icon_facebook.svg" alt="facebook" id="facebook" data-theme="light"/>
+              <img src="Imagenes/icon_facebook.svg" alt="facebook" id="facebook" data-theme="light"/>
             </a>
             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-              <img src="../Imagenes/icon_instagram.svg" alt="instagram" id="instagram" data-theme="light"/>
+              <img src="Imagenes/icon_instagram.svg" alt="instagram" id="instagram" data-theme="light"/>
             </a>
           </div>
           <p id="copyright">© GIFOS 2020 All rights reserved</p>
         </footer>
         <div id="fondo"></div>
        </main> 
-        <script src="../JS/Dark.js"></script>
-        <script src="../JS/Hover-Active-Img.js"></script>
-        <script src="../JS/API.js"></script>
-        <script src="../JS/GetFavs.js"></script>
+        <script src="JS/Dark.js"></script>
+        <script src="JS/Hover-Active-Img.js"></script>
+        <script src="JS/API.js"></script>
+        <script src="JS/GetFavs.js"></script>
     
 </body>
 </html>

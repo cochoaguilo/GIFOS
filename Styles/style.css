@@ -153,11 +153,26 @@ form input{
     font-size: 18px;
     margin: 4px;
 }
-form #icon-search{
-    height: 20px;
+/*form .iconos-search{
+    position: relative;
     width: 20px;
-    left: 20%;
-    top: 8px;
+    left: 80%;
+    bottom: 15px;
+}*/
+#icon-search{
+    position: relative;
+   
+    top: 5px;
+    cursor: pointer;
+    width: 20px;
+}
+#icon-close{
+    position: relative;
+    left: 80%;
+    display: none;
+    width: 15px;
+    bottom: 20px;
+    cursor: pointer;
 }
 #container-search{
     position: relative;
@@ -172,6 +187,10 @@ form #icon-search{
     font-variant-caps: all-small-caps;
     text-decoration: overline 1px#9CAFC3 ;
     
+}
+.texto-autocomplete{
+    position: relative;
+    bottom: 20px;
 }
 .gifs-search{
     position: relative;
@@ -289,7 +308,7 @@ h3{
 .modal{
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     padding-top: 60px;
     left: 0;
     top: 0;
@@ -361,9 +380,13 @@ baja el modal desde arriba*/
 .iconos-modal{
     position: relative;
     display: flex;
-    width: 40px;
-    left: 50%;
-    bottom: 5px;
+    width: 80px;
+    left: 65%;
+    top: 70px;
+}
+.iconos-modal a{
+    position: relative;
+    width: 100%;
 }
 /* Fin del modal*/
 
@@ -444,6 +467,9 @@ footer #copyright{
         background-color:#37383C ;
 
     }
+    .menu-active{
+        display: none;
+    }
     ul li a{
         margin: 10px;
         font-variant-caps: all-small-caps;
@@ -473,11 +499,23 @@ footer #copyright{
         width: 50%;
         left: 25%;
     }
+    .iconos-search{
+        cursor: pointer;
+    }
+
     #container-search{
       
         left: 5.5%;
         
         
+    }
+    .texto-autocomplete{
+        width: 70%;
+        
+    }
+    .texto-autocomplete:hover{
+        background-color: lightblue;
+        border-radius: 6px;
     }
     .gifs-search{
         
@@ -507,9 +545,7 @@ footer #copyright{
     .gifs-search:hover .bloque-activo{
         opacity: 0.8;
     }
-    .gifs-search:hover{
-        opacity: 0.8;
-    }
+    
     form input{
         width: 50%;
     }
@@ -606,10 +642,13 @@ footer #copyright{
     .trending-gifs .a{
         height: 20px;
     }
-    .trending-gifs:hover{
-        opacity: 0.8;
-    }
+    
     /* Modal version desktop*/
+    #imagen-modal{
+        width: 60%;
+        height: 450px;
+        left: 20%;
+    }
     .modal-content{
         height: 80%;
     }
@@ -618,12 +657,21 @@ footer #copyright{
         font-size: 24px;
     }
     .iconos-modal{
-        width: 100px;
+        position: relative;
+        width: 140px;
+        height: 60px;
         left: 68%;
         
     }
     .iconos-modal img{
-        width: 160px;
+        position: relative;
+        width: 50%;
+        cursor: pointer;
+    }
+    .iconos-modal a{
+        position: relative;
+        top: 5px;
+        width: 100%;
         cursor: pointer;
     }
     .modal-footer{

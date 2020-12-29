@@ -5,6 +5,8 @@ let finalizar = document.getElementById('finalizar');
 let subirGifo = document.getElementById('subir_gifo');
 let button1 =document.getElementById('button1');
 let button2 = document.getElementById('button2');
+let button3 = document.getElementById('button3');
+let reiniciar = document.getElementById('reiniciar')
 //DOM de los titulos y los videos
 let cajaCamara = document.getElementsByClassName('caja-camara')[0];
 let h1 = document.getElementById('h1');
@@ -37,7 +39,7 @@ const getStreamAndRecord = async()=> {
     navigator.mediaDevices.getUserMedia({
     audio: false,
     video: {
-       height: { ideal: 300, max: 480},
+       height: { ideal: 300},
        width: {ideal: 580}
     }
  })
@@ -98,25 +100,47 @@ const getStreamAndRecord = async()=> {
       
    let videoURL = window.URL.createObjectURL(blob);
    videoGIF.src = videoURL;
-   videoGIF.style.width = '480px';
-   videoGIF.style.height = '580px';
+   videoGIF.style.width = '580px';
+   videoGIF.style.height = '300px';
    cajaCamara.append(videoGIF);
    finalizar.classList.add('hidden');
    subirGifo.classList.remove('hidden');
-   let data = new FormData();
-   data.append('file', blob, 'myGif.gif');
-   console.log(data.get('file'))
+   reiniciar.classList.remove('hidden');
    
-   subirGifo.addEventListener('click',()=>{
+   subirGifo.addEventListener('click',async()=>{
+      let data = new FormData();
+      data.append('file', blob, 'myGif.gif');
+      console.log(data)
       const apikey = "NPIhWo3ADWsyjbibfobo8cILB5N5qVs1";
       let uploadGiphy = `https://upload.giphy.com/v1/gifs?api_key=${apikey}`;
-      postApiCall(uploadGiphy, data);
-      //crearGifoLocalStorage(videoURL)
+       await postApiCall(uploadGiphy, data);
+       button3.style.backgroundColor = "#572EE5";
+      button3.style.color = "white";
+      button2.style.backgroundColor = "white";
+      button2.style.color = "#572EE5";
+      tarjetaVideo(cajaCamara);
       
    } )
 }
+reiniciar.addEventListener('click',()=>{
+   reiniciar.style.backgroundColor = "#572EE5";
+   reiniciar.style.color = "white";
+   videoGIF.src = null;
+   cajaCamara.removeChild(videoGIF);
+   getStreamAndRecord();
+   reiniciar.classList.add('hidden')
+   subirGifo.classList.add('hidden')
+   grabar.classList.remove('hidden')
+   button3.style.backgroundColor = "white";
+      button3.style.color = "#572EE5";
+      button2.style.backgroundColor ="#572EE5"; 
+      button2.style.color = "white";
+      
+   if (cajaCamara.firstElementChild = tarjeta) {
+      cajaCamara.removeChild(tarjeta);
+   }
+});
 
-let data;
 const postApiCall = async (endpoint, body) => {
 
    const config = {
@@ -128,9 +152,10 @@ const postApiCall = async (endpoint, body) => {
    try {
 
        const res = await fetch(endpoint, config)
-         data = await res.json()
+       let data = await res.json()
+         
        console.log(data);
-       
+       crearGifoLocalStorage(data);
        return data;
 
    } catch (error) {
@@ -139,7 +164,7 @@ const postApiCall = async (endpoint, body) => {
    }
 }
 
-console.log(data)
+
 
 function crearGifoLocalStorage(gifId){
   
@@ -150,6 +175,19 @@ function crearGifoLocalStorage(gifId){
  
 
 }
+let tarjeta = document.createElement("div");
 
-
-
+let tarjetaVideo = (caja) =>{
+  
+   caja.appendChild(tarjeta);
+   tarjeta.classList.add("bloque-activo");
+   let tick = document.createElement("img");
+   tick.classList.add("tarjeta-video");
+   tick.id = "tick";
+   tick.src = "../GIFOS/Imagenes/ok.svg";
+   tarjeta.appendChild(tick);
+   let p = document.createElement("p");
+   p.innerText = "GIFO subido con exito";
+   p.classList.add("tarjeta-video")
+   tarjeta.appendChild(p);
+}
