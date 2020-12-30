@@ -1,5 +1,11 @@
 const containerSearch = document.getElementById("container-search");
 const input = document.getElementById("input");
+const trendingText = document.getElementById("trending");
+const iconSearch = document.getElementById("icon-search");
+const iconClose = document.getElementById("icon-close");
+let form = document.getElementById("form");
+let nombreBusqueda = document.createElement("h4");
+let button = document.createElement("button");
 
 function Busqueda(gifos, limit, i) {
   let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${gifos}&limit=${limit}&offset=20&rating=g&lang=es`;
@@ -16,23 +22,26 @@ function Busqueda(gifos, limit, i) {
         );
        
       }
+      iconSearch.style.display = 'none';
+      iconClose.style.display = 'block';
+      //close list autocomplete
+    form.classList.remove("form-active");
+    button.innerText = "VER MAS";
+    button.classList.add("button-gifs");
+    //Titulo creado a partir de la busqueda
+    nombreBusqueda.innerText = input.value;
+    nombreBusqueda.classList.add("nombre-busqueda");
+    recomendados.forEach(recomendado => recomendado.remove())
+    bloque1.removeChild(trendingText)
+    bloque1.insertBefore(nombreBusqueda, containerSearch);
+    bloque1.appendChild(button);
+    return false
     })
     .catch((err) => console.error("Error", err));
 }
 
 
-
-
-
-const trendingText = document.getElementById("trending");
-const iconSearch = document.getElementById("icon-search");
-const iconClose = document.getElementById("icon-close");
-let form = document.getElementById("form");
-let nombreBusqueda = document.createElement("h4");
-let button = document.createElement("button");
 //busqueda icono lupa
-
-  
 
 
 //autocompletar el search point
@@ -86,7 +95,7 @@ input.addEventListener("keyup", function(Event){
     console.log('hola');
     //alert('hola');
     ev.preventDefault();
-    //Busqueda(this.value,12,0);
+    Busqueda(input.value,12,0);
   }
 });
 
@@ -99,19 +108,15 @@ function refill(li) {
   li.addEventListener("click", function (e) {
     input.value = this.innerText;
     Busqueda(input.value, 12, 0);
-    iconSearch.style.display = 'none';
-    iconClose.style.display = 'block';
-    //close list autocomplete
-    form.classList.remove("form-active");
-    button.innerText = "VER MAS";
-    button.classList.add("button-gifs");
-    //Titulo creado a partir de la busqueda
-    nombreBusqueda.innerText = input.value;
-    nombreBusqueda.classList.add("nombre-busqueda");
-    bloque1.insertBefore(nombreBusqueda, containerSearch);
-    bloque1.replaceChild(button, trendingText);
-    recomendados.forEach(recomendado => recomendado.remove())
     
+    
+    /*if (bloque1.firstChild !==nombreBusqueda) {
+      bloque1.insertBefore(nombreBusqueda, containerSearch);
+      bloque1.replaceChild(button, trendingText);
+    }else{
+      nombreBusqueda.remove();
+      bloque1.replaceChild(trendingText, button);
+    }*/
     
   });
   if (!input.value) {
@@ -137,37 +142,44 @@ button.addEventListener("click", () => {
 
 iconSearch.addEventListener("click", () => {
   //Primero cambia la imagen de la lupa y su estilo
-  
-    iconSearch.style.display = 'none';
-    iconClose.style.display = 'block';
+    //form.classList.remove("form-active");
+    //iconSearch.style.display = 'none';
+    //iconClose.style.display = 'block';
     Busqueda(input.value, 12, 0); //funcion linea 4
     //cambios de css y html al buscar un gif
     
-    button.innerText = "VER MAS";
-    button.classList.add("button-gifs");
+    //button.innerText = "VER MAS";
+    //button.classList.add("button-gifs");
     //Titulo creado a partir de la busqueda
-    nombreBusqueda.innerText = input.value;
-    nombreBusqueda.classList.add("nombre-busqueda");
-    bloque1.insertBefore(nombreBusqueda, containerSearch);
-    bloque1.replaceChild(button, trendingText);
-    recomendados.forEach(recomendado => recomendado.remove())
+    //nombreBusqueda.innerText = input.value;
+    //nombreBusqueda.classList.add("nombre-busqueda");
+    
+    //recomendados.forEach(recomendado => recomendado.remove())
     
   
 });
 
 iconClose.addEventListener("click", () =>{
-  nombreBusqueda.innerHTML = '';
+  //nombreBusqueda.innerHTML = '';
   form.classList.remove("form-active");
-  
-  if (containerSearch.lastChild = button) {
+  recomendados.forEach(recomendado => recomendado.remove())
+  if (bloque1.lastChild = button) {
+    console.log('hola')
     bloque1.replaceChild(trendingText, button);
     arrayGifs.forEach(gif => gif.remove());
+    nombreBusqueda.remove();
   }
-  
+  /*if (bloque1.firstChild !==nombreBusqueda) {
+    bloque1.insertBefore(nombreBusqueda, containerSearch);
+    bloque1.replaceChild(button, trendingText);
+  }else{
+    nombreBusqueda.remove();
+    bloque1.replaceChild(trendingText, button);
+  }*/
   iconSearch.style.display = '';
   iconClose.style.display = 'none';
   iconSearch.style.left = "";
   input.value = "";
-  recomendados.forEach(recomendado => recomendado.remove())
+  
   
 }) 
