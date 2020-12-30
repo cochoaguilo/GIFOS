@@ -23,17 +23,15 @@ comenzar.addEventListener('click',()=>{
    
    button1.style.backgroundColor = "#572EE5";
    button1.style.color = "white";
+   setTimeout(getStreamAndRecord,2000);
    
 })
 //click sobre el button2
 
-button2.addEventListener('click',()=>{
-    button2.style.backgroundColor = "#572EE5";
-    button2.style.color = "white";
-    button1.style.backgroundColor = "white";
-    button1.style.color = "#572EE5";
-    getStreamAndRecord();
-})
+/*button2.addEventListener('click',()=>{
+    
+   
+})*/
 //llamado al video recorder
 const getStreamAndRecord = async()=> { 
     navigator.mediaDevices.getUserMedia({
@@ -44,7 +42,10 @@ const getStreamAndRecord = async()=> {
     }
  })
  .then(function(stream){
-    
+   button2.style.backgroundColor = "#572EE5";
+   button2.style.color = "white";
+   button1.style.backgroundColor = "white";
+   button1.style.color = "#572EE5";
     video.srcObject = stream;
     video.play();
     cajaCamara.append(video);
