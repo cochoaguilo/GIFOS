@@ -18,7 +18,8 @@ function Busqueda(gifos, limit, i) {
           json.data[index].images.original,
           containerSearch,
           "gifs-search",
-          json.data[index].username
+          json.data[index].username,
+          json.data[index].images.downsized
         );
        
       }
