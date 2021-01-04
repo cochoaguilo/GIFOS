@@ -103,17 +103,27 @@ function addToDOM(info, container, clase, name,downsized) {
     iconDownload.src = "../GIFOS/Imagenes/icon-download.svg";
   });
 
-  iconDownload.addEventListener("click", async() => {
-    try{
+  //iconDownload.addEventListener("click", downloadGiftarjeta)
+   /* try{
     let res = await fetch(downsized.url);
     let data = await res.blob();
     
-        aModal.href = URL.createObjectURL(data);
-        aModal.setAttribute("download", name);
+        a.href = URL.createObjectURL(data);
+        a.setAttribute("download", name);
         console.log(data)
       }
       catch(err){ console.log(err + " on downloadGif function")};
-  });
+  });*/
+  function downloadGiftarjeta() {
+    fetch(downsized.url)
+      .then(res => res.blob())
+      .then(data => {
+        a.href = URL.createObjectURL(data);
+        a.setAttribute("download", name);
+      })
+      .catch(err => console.log(err + " on downloadGif function"));
+  };
+  downloadGiftarjeta();
 
   iconMax.addEventListener("mouseover", () => {
     iconMax.src = "../GIFOS/Imagenes/icon-max-hover.svg";
@@ -186,8 +196,8 @@ function addToDOM(info, container, clase, name,downsized) {
     }
     
   });
-  modalDownload.addEventListener("click", async() => {
-    try{
+  
+   /* try{
     let res = await fetch(downsized.url);
     let data = await res.blob();
     
@@ -195,8 +205,19 @@ function addToDOM(info, container, clase, name,downsized) {
         aModal.setAttribute("download", name);
         console.log(data)
       }
-      catch(err){ console.log(err + " on downloadGif function")};
-  });
+      catch(err){ console.log(err + " on downloadGif function")};*/
+  //});
+  function downloadGif() {
+    fetch(info.url)
+      .then(res => res.blob())
+      .then(data => {
+        aModal.href = URL.createObjectURL(data);
+        aModal.setAttribute("download", name);
+      })
+      .catch(err => console.log(err + " on downloadGif function"));
+  };
+  downloadGif();
+  //modalDownload.addEventListener("click", downloadGif)
 }
 
 //termina Trending
